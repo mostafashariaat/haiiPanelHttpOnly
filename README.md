@@ -12,5 +12,7 @@ https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your
 
 3- fill .env-sample file by valid information and then rename .env-sample to .env
 
-4- in haiiPanelHttpOnly.settings.py find CORS_ALLOWED_ORIGINS and then put port of front-end framework or library (react,angular,vue,...) run  
+4- run python manage.py migrate and python manage.py makemigrations in terminal
+
+5- in haiiPanelHttpOnly.settings.py find CORS_ALLOWED_ORIGINS and then put port of front-end framework or library (react,angular,vue,...) run  
 
