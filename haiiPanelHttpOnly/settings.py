@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'dj_rest_auth',
     'rest_framework.authtoken',
     "rest_framework_simplejwt",
+    'corsheaders',
 
 ]
 
@@ -38,12 +39,19 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'haiiPanelHttpOnly.urls'
+
+# specify domains for CORS, e.g. (port of react run) :
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]
 
 TEMPLATES = [
     {
@@ -125,4 +133,3 @@ REST_USE_JWT = True
 JWT_AUTH_COOKIE = 'access-token'
 
 JWT_AUTH_REFRESH_COOKIE = 'refresh-token'
-
